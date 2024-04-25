@@ -1,0 +1,51 @@
+{% extends 'places.html' %}
+{%block placeimage%}
+    <div class="container-fluid">
+
+    <div class="row p-3">
+
+        {%for i in places %}
+        <div class="col-md-6 col-lg-6 col-12 text-center">
+
+				<div class="card m-2 cycledisplay">
+					  <img class="card-img-top cycledisplaycardimage" src="{{ i.Photo.url }}" alt=" {{ i.Name }} ">
+					  <div class="card-body ">
+					    <p class="card-title font-weight-bold displaycyclecard-title text-dark">{{ i.Name }}</p>
+					    <a href="" class="btn text-white" data-toggle="modal" data-target="#model-{{ forloop.counter }}" style="background-color: #b84373;">More Details</a>
+					  </div>
+				</div>
+			<!--  Model to be open for More Details-->
+					<!-- Modal -->
+					<div class="modal fade" id="model-{{ forloop.counter }}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+						<div class="modal-content border border-danger">
+						  <div class="modal-header">
+							<h5 class="modal-title " id="staticBackdropLabel">{{i.Name}}</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true" >&times;</span>
+							</button>
+						  </div>
+						  <div class="modal-body">
+							<div class="container">
+								<img src="{{i.Photo.url}} " class="img-fluid border border-danger">
+								<hr class="bg-danger">
+								<div class="container font-weight-bold">
+									<p>{{ i.Name }}</p>
+									<p>Location: {{ i.Address }} </p>
+                                    <p>Distance: {{ i.Distance }}</p>
+                                    <p>Mode Of Travel: {{ i.Mode }}</p>
+								</div>
+							</div>
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+						  </div>
+						</div>
+					  </div>
+					</div>
+			<!--  Model end here -->
+		</div>
+			{% endfor %}
+        </div>
+    </div>
+{%endblock%}

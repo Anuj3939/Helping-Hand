@@ -1,0 +1,104 @@
+{% extends 'basetemplate.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid p-5 place-container">
+  <div class="container ">
+<div class="container text-center">
+			{% include 'message.html' %}
+	</div>
+
+					<script async src="https://cse.google.com/cse.js?cx=9f2a97e4a73477165"></script>
+	  <div class="px-lg-5 mx-lg-5">
+					<div class="gcse-search"></div>
+		  </div>
+      <center><h2 class="typingAnimation ">Find a place To visit!</h2></center>
+
+
+      <section class="mt-3">
+
+		  <center>
+      <button type="button" class="btn font-weight-bold" data-toggle="modal" data-target="#myModal" style=" font-size:30px;font-family: cursive;"><img src="{% static 'images/plus.svg' %}" class="img-fluid" height="30px" width="30px" style="border-radius:50%;" title="Add a new post"></button>
+      </center>
+	<div class="modal fade" id="myModal">
+					    <div class="modal-dialog modal-dialog-centered">
+					      <div class="modal-content">
+
+					        <!-- Modal Header -->
+					        <div class="modal-header">
+					          <h4 class="modal-title mx-auto">Post a Visited Place.</h4>
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        </div>
+
+					        <div class="modal-body">
+					        	<div class="container">
+									  <form action="" method="post" class="was-validated" enctype="multipart/form-data">
+											{% csrf_token %}
+									    <div class="form-group">
+									      <label for="Name">Name of The Place: </label>
+									      <input type="text" class="form-control" id="Name" placeholder="Name of Place" name="name" required>
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+									    <div class="form-group">
+									      <label for="address">Address of the Place:</label>
+									      <input type="text" class="form-control" id="address" placeholder="Address of The place" name="address" required>
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+									    <div class="form-group">
+									      <label for="distance">Approx Distance from Nirma campus:</label>
+									      <input type="text" class="form-control h-50" id="distance" placeholder="please mention meter or kilometer" name="distance" required>
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+										  <div class="form-group">
+									      <label for="mode">Mode of travel:</label>
+									      <select id="mode" name="mode" class="form-control">
+									      	<option value="Auto-Rickshaw">auto rickshaw</option>
+									      	<option value="Train">Train</option>
+									      	<option value="Flight">Flight</option>
+									      </select>
+									    </div>
+									    <div class="form-group">
+									      <label for="photo">upload a image:</label>
+									      <input type="file" class="form-control" id="photo" name="photo" required>
+									    </div>
+									   <div class="form-group form-check">
+									      <label class="form-check-label">
+									        <input class="form-check-input" type="checkbox" name="remember" required> I agree to all policies.
+									        <div class="valid-feedback">Valid.</div>
+									        <div class="invalid-feedback">Check this checkbox to continue.</div>
+									      </label>
+									    </div>
+									    <div class="form-group text-center">
+									    	<button type="submit" class="btn btn-primary">Submit</button>
+									  	</div>
+									  </form>
+								</div>
+
+					        </div>
+
+					        <!-- Modal footer -->
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					        </div>
+
+					      </div>
+					    </div>
+		</div>
+  <div class="container">
+  	 	<div class="row text-center">
+			{%block placeimage%}{%endblock%}
+  	 	</div>
+  </div>
+</section>
+<script>
+	setTimeout(function(){
+		if($('#msg').length>0){
+		$('#msg').remove();
+		}
+	},2000);
+</script>
+  </div>
+</div>
+{% endblock %}

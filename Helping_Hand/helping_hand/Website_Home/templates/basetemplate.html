@@ -1,0 +1,103 @@
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.CSS' %}">
+	<title>Helping Hand</title>
+</head>
+<body>
+<header>
+	<!-- nav-start -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+		  <a class="navbar-brand navfont ml-5" href="{% url 'home' %}">Helping Hand</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link linksindex" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link linksindex" href="{% url 'home'%}#service">Services</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link linksindex" href="{% url 'home'%}#about">About us</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link linksindex" href="{% url 'home'%}#covid">AI News</a>
+		      </li>
+		    </ul>
+
+		  </div>
+		</nav>
+		<!-- nav-end -->
+</header>
+	{% block content %}{% endblock %}
+    <!-- footer start -->
+<footer class="position-static">
+	<div class="container-fluid  foot">
+		<div class="row mt-5">
+			<div class="col-sm-12 col-md-12 col-lg-6">
+				<h3 class="text-center" style="font-family: lato; font-weight: 500; padding: 10px;">Find Us On:</h3>
+				<hr class="w-100 bg-white">
+				<div class="container text-center">
+					<div class="row mt-5 mb-5 pt-5">
+						<div class=" offset-1 col-2 ">
+							<a href="mailto:anujagrawal.02003@gmail.com"><img src="{% static 'images/gmail.svg' %}"  class="footicon"></a>
+						</div>
+						<div class="col-2">
+							<a href="https://www.linkedin.com/in/anuj-agrawal-4022191b8/" target="_blank"><img src="{% static 'images/linkedin.svg' %}"   class="footicon"></a>
+						</div>
+						<div class="col-2">
+							<a href="https://github.com/Anuj3939" target="_blank"><img src="{% static 'images/github.svg' %}"  class="footicon"></a>
+						</div>
+						<div class="col-2">
+							<a href="#" target="_blank"><img src="{% static 'images/facebook.svg' %}"   class="footicon"></a>
+						</div>
+						<div class="col-2">
+							<a href="#" target="_blank"><img src="{% static 'images/twitter.svg' %}"   class="footicon"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6 col-lg-3">
+				<h3 class="text-center" style="font-family: lato; font-weight: 500; padding: 10px;">About Us</h3>
+				<hr class="w-100  bg-white">
+				<div class="container mb-5">
+					<p class="text-center">
+						Hi, My name is Anuj Agrawal.
+					The idea behind making this website is to solve the problem of every student on campus.
+					The different sections in the service section of the website are the general problems faced by almost every student.
+					so just to make their life easy I have created this website. Here they can buy or sell their used cycle, cooler, they can find the place to eat, a place to visit with friends.
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6 col-lg-3">
+				<h3 class="text-center" style="font-family: lato; font-weight: 500; padding: 10px;">Usefull Links</h3>
+				<hr class="w-100 bg-white">
+				<div class="container text-center ">
+					<ul>
+						<li><a href="{% url 'home'%}" class="text-white linksindex">Home</a></li>
+						<li><a href="{% url 'home'%}#service" class="text-white linksindex">Services</a></li>
+						<li><a href="{% url 'home'%}#about" class="text-white linksindex">About Us</a></li>
+						<li><a href="{% url 'home'%}#covid" class="text-white linksindex">AI News</a></li>
+						<li><a href="#" class="text-white linksindex">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="container-fluid bg-secondary">
+		<h6 class="text-center text-white ">All right reserved | copyright&copy;anujagrawal.02003@gmail.com 2025</h6>
+	</div>
+</footer>
+<!-- footer end -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

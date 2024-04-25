@@ -1,0 +1,143 @@
+{% extends "basetemplate.html" %}
+{% load static %}
+{% block content %}
+	<section style="font-family: cursive;" class="cycleClass">
+		<div class="container mt-5 p-5">
+			{% include 'message.html' %}
+			<h5 class="text-center font-weight-bold text-white" style="font-family:cursive;"><q>Life is like riding a bicycle. To keep your balance, you must keep moving..</q></h5>
+			<div class="row ">
+				<div class=" col-md-6 col-lg-6 col-12 mt-3 p-5">
+					<div class="card bg-dark" >
+						<img class="card-img-top m-auto" src="{% static 'images/c3.jpg' %}" alt="bike logo">
+					<div class="card-body text-center">
+							<h1 class="card-title font-weight-bold text-white">Want To Buy A Bicycle.</h1>
+							<a href="{% url 'displaycycle' %}" class="btn text-white font-weight-bold" style="background-color: #b84373;">BUY NOW</a>
+					</div>
+
+				</div>
+			</div>
+				<div class="col-md-6 col-lg-6 col-12 mt-3 p-5">
+					<div class="card bg-dark">
+						<img class="card-img-top m-auto" src="{% static 'images/c3.jpg' %}" alt="bike logo">
+					<div class="card-body text-center">
+						<h1 class="card-title font-weight-bold text-white">Want To Sell A Bicycle.</h1>
+						<button type="button" class="btn text-white font-weight-bold" data-toggle="modal" data-target="#myModal" style="background-color: #b84373;">SELL NOW</button>
+					</div>
+					</div>
+					<div class="modal fade" id="myModal">
+					    <div class="modal-dialog modal-dialog-centered">
+					      <div class="modal-content">
+
+					        <!-- Modal Header -->
+					        <div class="modal-header">
+					          <h4 class="modal-title mx-auto">SELLER INFO. FORM</h4>
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        </div>
+
+					        <div class="modal-body">
+					        	<div class="container">
+									  <form action="" method="POST" class="was-validated" enctype="multipart/form-data">
+										  {% csrf_token %}
+									    <div class="form-group">
+									      <label for="Name">Full Name:</label>
+									      <input type="text" class="form-control" id="Name" placeholder="Full name" name="Name" required>
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+
+									    <div class="form-group">
+									      <label for="reginumber">Registration Number:</label>
+									      <input type="text" class="form-control" id="reginumber" placeholder="Registration number" name="reginumber" required minlength="7">
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+
+									    <div class="form-group">
+									      <label for="rollnumber">Roll Number:</label>
+									      <input type="character" class="form-control" id="rollnumber" placeholder="Roll Number" name="rollnumber" required minlength="8">
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+
+										<div class="form-group">
+											<label for="hostel">Hostel:</label>
+											<select id="hostel" name="hostel" class="form-control">
+												<option value="H1">H1</option>
+												<option value="H2">H2</option>
+												<option value="H3">H3</option>
+												<option value="H4">(H4)Girls Hostel</option>
+											</select>
+										  </div>
+
+									    <div class="form-group">
+									      <label for="roomnumber">Room Number:</label>
+									      <input type="text" class="form-control" id="roomnumber" placeholder="Room number" name="roomnumber" required minlength="1">
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+
+									    <div class="form-group">
+									      <label for="contact Number">Contact Number:</label>
+									      <input type="number" class="form-control" id="contactnumber" placeholder="contact number" name="contactnumber" required minlength="10">
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+
+									    <div class="form-group">
+									      <label for="course">Course:</label>
+									      <select id="course" name="course" class="form-control">
+									      	<option value="B Tech">B Tech</option>
+									      	<option value="M Tech">M Tech</option>
+									      	<option value="MBA">MBA</option>
+									      	<option value="MCA">MCA</option>
+									      	<option value="MSC">MSc</option>
+									      	<option value="MSC Tech">MSC Tech</option>
+									      </select>
+									    </div>
+
+
+									    <div class="form-group">
+									      <label for="photo">upload photo:</label>
+									      <input type="file" class="form-control" id="photo" name="photo" required>
+									      <div class="valid-feedback">Valid.</div>
+									      <div class="invalid-feedback">Please fill out this field.</div>
+									    </div>
+
+									   <div class="form-group form-check">
+									      <label class="form-check-label">
+									        <input class="form-check-input" type="checkbox" name="remember" required> I agree to all policies.
+									        <div class="valid-feedback">Valid.</div>
+									        <div class="invalid-feedback">Check this checkbox to continue.</div>
+									      </label>
+									    </div>
+
+									    <div class="form-group text-center">
+									    	<button type="submit" class="btn btn-primary">Submit</button>
+									  	</div>
+									  </form>
+								</div>
+
+					        </div>
+
+					        <!-- Modal footer -->
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					        </div>
+
+					      </div>
+					    </div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+<script>
+	setTimeout(function(){
+		if($('#msg').length>0){
+		$('#msg').remove();
+		}
+	},5000);
+</script>
+{% endblock %}

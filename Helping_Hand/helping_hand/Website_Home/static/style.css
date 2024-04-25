@@ -1,0 +1,157 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: lato;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	user-select: none;
+
+}
+.navfont{
+   font-family: carolina;
+   font-weight: bold;
+   font-size: 25px;
+}
+.carousel-inner img {
+    width: 100%;
+    height:auto;
+  }
+  .card{
+  	border: none;
+  }
+  .cardimageindex{
+  	height: 50px;
+  	width: 50px;
+  }
+  .card-title{
+  	font-size: 24px;
+  }
+ .wecareforyou{
+   background-image: url("images/care3.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 500px;
+   filter: blur(0px);
+   background-attachment:fixed;
+ 
+ }
+ .rules{
+  color:white;
+ 	font-family: carolina;
+ 	font-size: 50px;
+ 	font-weight: 5000;
+ 	letter-spacing: 0.1em;
+ }
+ /*.serviceclass{
+ background:url('images/back.jpg');
+ 	background-size:cover;
+ }*/
+ .aboutus{
+ 	padding: 20px;
+ 	border: 3px solid #b84373;
+background: url('images/i5-min.jpeg');
+ 	background-size:cover;
+ }
+ .aboutimage{
+ border: 3px solid #b84373;
+ }
+ .linksindex:hover{
+ color:#b84373 !important;
+ }
+ .foot{
+ 	color:white;
+ 	background-color:#343a40;
+ }
+ .footicon{
+ height:30px;
+ width:30px;
+ }
+ .footicon:hover{
+ padding:2px;
+ }
+ .foodClass
+ {
+ background:url('images/back.jpg');
+ background-size:cover;
+ background-repeat:no-repeat;
+ height:100%;
+ }
+ .coolerClass{
+ background:url('images/cooler.png');
+ background-size:cover;
+ height:100%;
+ }
+ .cycleClass{
+ background:url('images/cy.jpg');
+ background-size:cover;
+ height:100%;
+ }
+ .cycledisplay{
+ border:1px solid #b84373;
+ }
+ .cycledisplay:hover{
+ border:1px dashed #b84373;
+ }
+ .displaycyclecard-title{
+ font-size:15px;
+ }
+ .cycledisplaycardimage{
+ width:100%;
+ height:150px;
+ object-fit:cover;
+ padding:5px;
+ }
+.place-container{
+background:url('images/travel.jpg');
+
+background-size:cover;
+height:100%;
+/*animation: shrink 8s infinite alternate;
+ animation-timing-function:ease-in-out;*/
+ background-repeat: repeat-y;
+}
+/*
+@keyframes shrink {
+  0% {
+    background-size: 110% 110%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+*/
+.search-box{
+border-radius:100px;
+border-color:#b84373;
+}
+.typingAnimation{
+color :Black;
+animation: type 8s steps(22) infinite;
+overflow:hidden;
+white-space:nowrap;
+font-family:lato;
+border-right:4px solid black;
+width:22ch;
+}
+@keyframes type{
+ 0%{
+ width:0ch;
+ }
+ 100%{
+ width:22ch;
+ }
+}
+.search-box-btn:hover{
+border-color:black;
+}
+input[type=text]:focus {
+  outline:none;
+}
+.gsc-control-cse{
+overflow-y:hidden;
+background:transparent !important;
+border:none !important;
+}
+/*******************buysell*********************/
+/***********************************************/
+
